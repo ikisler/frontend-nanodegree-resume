@@ -34,7 +34,9 @@ var HTMLworkEmployer = '<a href="#">%data%';
 var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
+//var HTMLworkDescription = '<p><br>%data%</p>';
+var HTMLworkDescriptionStart = '<br><ul class="work-description"></ul>';
+var HTMLworkDescription = '<li>%data%</li>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
@@ -169,8 +171,14 @@ function initializeMap() {
     });
 
     // hmmmm, I wonder what this is about...
-    google.maps.event.addListener(marker, 'click', function() {
+    google.maps.event.addListener(marker, 'mouseover', function() {
       // your code goes here!
+      infoWindow.open(map, marker);
+    });
+
+    google.maps.event.addListener(marker, 'mouseout', function() {
+      // your code goes here!
+      infoWindow.close();
     });
 
     // this is where the pin actually gets added to the map.

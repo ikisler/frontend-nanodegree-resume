@@ -5,21 +5,30 @@ var work = {
 		"title": "Google Ads Quality Rater",
 		"location": "Marysville, WA",
 		"dates": "October 2014 to Present",
-		"description": "Did some stuff."
+		"description": ["Worked with Google to track visual quality and content accuracy of advertisements.",
+ 			"Examined advertising related data, and provided feedback and analysis.",
+			"Analyzed data using in-depth familiarity with web culture, and broad knowledge of topics.",
+			"Worked in a team setting to clarify issues and solve rating problems."]
 	},
 	{
 		"employer": "YMCA of San Benito County",
 		"title": "After School Program Leader",
 		"location": "Hollister, CA",
 		"dates": "September 2013 to June 2014",
-		"description": "Did some stuff."
+		"description": ["Tutored elementary school students in a variety of subjects.",
+			"Taught enrichment curriculum, including crafts, outdoor games, literature activities, and service learning.",
+			"Frequently engaged in curriculum development, or adjustment of curriculum to better suit age ranges of students.",
+			"Kept parents, many whom did not speak English, updated on homework status and behavior.",
+			"Assisted in student observations and placement decisions, and maintaining organization."]
 	},
 	{
 		"employer": "YMCA of Silicon Valley",
 		"title": "After School Program Leader",
 		"location": "Gilroy, CA",
 		"dates": "September 2013 to June 2014",
-		"description": "Did some stuff."
+		"description": ["Tutored elementary and middle school students in a variety of subjects.",
+			"Taught enrichment curriculum, including crafts, outdoor activities, and science projects.",
+			"Assisted in making student observations and decisions, and maintaining organization."]
 	}]
 };
 
@@ -119,7 +128,7 @@ bio.display = function() {
 bio.display();
 
 /*** Adds Work Info ***/
-function displayWork() {
+work.display = function () {
 
 	var formattedEmployer;
 	var formattedTitle;
@@ -143,12 +152,19 @@ function displayWork() {
 		$(".work-entry:last").append(formattedLocation);
 
 		// Add Description
-		formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-		$(".work-entry:last").append(formattedDescription);	
+		$(".work-entry:last").append(HTMLworkDescriptionStart);
+
+		for(var i=0; i<work.jobs[job].description.length; i++)
+		{
+			formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description[i]);
+			$(".work-description:last").append(formattedDescription);
+		}
+		//formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		//$(".work-entry:last").append(formattedDescription);	
 	}
 }
 
-displayWork();
+work.display();
 
 /*** Adds Project Info ***/
 projects.display = function() {
@@ -220,6 +236,7 @@ education.display = function() {
 	for(newClass in education.onlineCourse) {
 
 		formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourse[newClass].title);
+		formattedTitle = formattedTitle.replace("#", education.onlineCourse[newClass].url);
 		formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourse[newClass].school);
 		$(".education-entry:last").append(formattedTitle + formattedSchool);
 
@@ -227,6 +244,7 @@ education.display = function() {
 		$(".education-entry:last").append(formattedDates);
 
 		formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourse[newClass].url);
+		formattedURL = formattedURL.replace("#", education.onlineCourse[newClass].url);
 		$(".education-entry:last").append(formattedURL);
 	}
 }
