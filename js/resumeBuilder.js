@@ -43,7 +43,7 @@ var projects = {
 
 var bio = {
 	"name": "Isabeau Kisler",
-	"role": "Web Dev",
+	"role": "Front-End Web Dev",
 	"welcomeMessage": "Hello there!  Welcome to my interactive resume.",
 	"contact": {
 		"mobile": "111-111-1111",
@@ -296,3 +296,36 @@ var name = $("#name").text();
 $('#main').append(internationalizeButton);
 
 $("#mapDiv").append(googleMap);
+
+$(function(){
+	$(".work-entry").toggle();
+	$(".project-entry").toggle();
+	$(".education-entry").toggle();
+	$("#map").toggle();
+
+	$("#workExperience").click(function(){
+		$(".work-entry").toggle();
+	});
+
+	$("#projects").click(function(){
+		$(".project-entry").toggle();
+	});
+
+	$("#education").click(function(){
+		$(".education-entry").toggle();
+	});
+
+    $("#map-title").click(function(){
+        $("#map").toggle();
+        initializeMap();
+        map.fitBounds(mapBounds);
+
+        if($("#map").css("display") ==="none") {
+    		$("#mapDiv").css("height","100px");
+    	}
+    	else
+    	{
+    		$("#mapDiv").css("height","300px");
+    	}
+    });
+});
