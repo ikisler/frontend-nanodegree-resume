@@ -13,17 +13,22 @@
   padding-right: 5%;
 }
 
+#main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 h1 {
   font-size: 40px;
-  color: #F5A623;
+  color: #fff;
   line-height: 48px;
   display: inline;
 }
 
 h2 {
   font-weight: bold;
-  font-size: 24px;
-  color: #999999;
+  font-size: 26px;
+  color: #40185b;
   line-height: 29px;
   padding: 10px;
 }
@@ -47,7 +52,6 @@ h2, h3, h4, h5 {
   padding-left: 5%;
   padding-right: 5%;
 }
-
 
 .date-text {
   font-style: italic;
@@ -82,17 +86,17 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #F3F3F3;
+  color: #fff;
   line-height: 28px;
 }
 
 #skillsH3 {
-  color: #F5AE23;
+  color: #bbe39e;
   display: none;
 }
 
 .orange {
-  background-color: #F5AE23;
+  background-color: #bbe39e;
 }
 
 .orange-text {
@@ -101,22 +105,29 @@ a {
 
 .white-text {
   font-weight: bold;
-  color: #FFFFFF;
+  color: #fff;
 }
 
 .gray {
-  background-color: #F3F3F3;
+  background-color: #F3F3F3; /*maybe try BBE39E */
   padding-bottom: 10px;
   clear:both;
 }
 
 .dark-gray {
-  background-color: #4A4A4A;
+  background-color: #629c39;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-image: url("../images/peaches_large_2x 3.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  //background-color: #629c39;
+}
+
+.nameSub {
+  color:#fff;
 }
 
 .flex-box {
@@ -135,14 +146,27 @@ a {
   padding-bottom: 2.5%
 }
 
-ul {
+#skills {
   list-style-type: none;
+}
+
+.work-title {
+  color:#40185b;
+  font-size: 18px;
+}
+
+.project-title, .school-title, .class-title {
+  font-size:18px;
+}
+
+li {
+  padding-bottom:5px;
 }
 
 .biopic {
   float: left;
   padding: 10px;
-  width: 200px;
+  width: 150px;
   display: none;
 }
 
@@ -202,7 +226,7 @@ span {
 }
 
 #mapDiv {
-  height: 400px;
+  height: 100px;
   width: 100%;
   padding-bottom: 5%;
 }
