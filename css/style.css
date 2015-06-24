@@ -30,7 +30,6 @@ h2 {
   font-size: 26px;
   color: #40185b;
   line-height: 29px;
-  padding: 10px;
 }
 
 h3 {
@@ -83,6 +82,10 @@ a {
   display: block;
 }
 
+li {
+  display:inline-block;
+}
+
 .welcome-message {
   font-style: italic;
   font-size: 18px;
@@ -99,8 +102,8 @@ a {
   background-color: #bbe39e;
 }
 
-.orange-text {
-  color: #F5AE23;
+.green-text {
+  color: #bbe39e;
 }
 
 .white-text {
@@ -151,12 +154,16 @@ a {
 }
 
 .work-title {
-  color:#40185b;
+  color: #40185b;
   font-size: 18px;
+  padding-left: 15px;
 }
 
 .project-title, .school-title, .class-title {
-  font-size:18px;
+  color: #40185b;
+  font-size: 18px;
+  text-decoration: underline;
+  padding-left: 15px;
 }
 
 li {

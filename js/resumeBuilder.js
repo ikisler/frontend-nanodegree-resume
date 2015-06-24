@@ -1,4 +1,19 @@
 
+var bio = {
+	"name": "Isabeau Kisler",
+	"role": "Front-End Web Dev",
+	"welcomeMessage": "Hello there!  Welcome to my resume, built using jQuery.",
+	"contact": {
+		"mobile": "111-111-1111",
+		"email": "ikisler@csumb.edu",
+		"github": "ikisler",
+		"blog": "http://www.theweeklywhatwhat.blogspot.com",
+		"location": "Marysville, WA"
+	},
+	"skills": ["HTML", "Javascript", "jQuery", "Responsive Web Design"],
+	"pic":"images/headshot.jpg"
+};
+
 var work = {
 	"jobs": [{
 		"employer": "ZeroChaos",
@@ -25,7 +40,7 @@ var work = {
 		"employer": "YMCA of Silicon Valley",
 		"title": "After School Program Leader",
 		"location": "Gilroy, CA",
-		"dates": "September 2013 to June 2014",
+		"dates": "October 2008 to June 2009",
 		"description": ["Tutored elementary and middle school students in a variety of subjects.",
 			"Taught enrichment curriculum, including crafts, outdoor activities, and science projects.",
 			"Assisted in making student observations and decisions, and maintaining organization."]
@@ -36,24 +51,12 @@ var projects = {
 	"projects": [{
 		"title": "Online Portfolio",
 		"dates": "June 2015",
-		"description": "An online portfolio which describes the projects I'm working on for my Udacity Nanodegree.",
-		"images": ["images/headshot.jpg", "images/headshot.jpg"]
+		"description": "An online portfolio which describes the projects I'm working on for my Udacity Nanodegree.  Developed using Bootstrap.",
+		"images": ["images/portfolio_screenshot_small.jpg"]
 	}]
 };
 
-var bio = {
-	"name": "Isabeau Kisler",
-	"role": "Front-End Web Dev",
-	"welcomeMessage": "Hello there!  Welcome to my interactive resume.",
-	"contact": {
-		"mobile": "111-111-1111",
-		"email": "ikisler@csumb.edu",
-		"github": "ikisler",
-		"location": "Marysville, WA"
-	},
-	"skills": ["awesomeness", "smartness", "coolness", "radicalness"],
-	"pic":"images/headshot.jpg"
-};
+
 
 var education = {
 	"schools": [{
@@ -124,6 +127,34 @@ bio.display = function() {
 	}
 
 }
+
+bio.displayContact = function(divLocation) {
+	var formattedMobile;
+	var formattedEmail;
+	var formattedGithub;
+	var formattedBlog;
+	var formattedLocation;
+
+	$(divLocation).append(HTMLcontactStart);
+
+	/*** Not sure if I want my phone number on my website yet ***/
+	//formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
+	//$(".contact").append(formattedMobile);
+
+	formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
+	$(".contact:last").append(formattedEmail);
+
+	formattedGithub = HTMLgithub.replace("%data%", bio.contact.github);
+	$(".contact:last").append(formattedGithub);
+
+	formattedBlog = HTMLblog.replace("%data%", bio.contact.blog);
+	$(".contact:last").append(formattedBlog);
+
+	formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
+	$(".contact:last").append(formattedLocation);
+}
+
+bio.displayContact("#header");
 
 bio.display();
 
@@ -251,52 +282,15 @@ education.display = function() {
 
 education.display();
 
-/*** Random Bits of Code ***/
-$(document).click(function(loc) {
-
-	logClicks(loc.pageX,loc.pageY);
-
-});
-
-function locationizer(work_obj) {
-	var locations = [];
-
-	for(job in work_obj.jobs)
-	{
-		locations.push(work_obj.jobs[job].location);
-	}
-
-	return locations;
-}
 
 
-/*** This is the original code as shown in the video.  It does NOT work.
-$("#main").append(internationalizeButton);
-
-function inName(origName) {
-	var names = origName.trim().split(" ");
-	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-	name[1] = name[1].toUpperCase();
-
-	return name.join(" ");
-}***/
-
-function inName() {
-  var name = window.name;
-  name = name.trim().split(" ");
-  console.log(name);
-  name[1] = name[1].toUpperCase();
-  name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-  
-  return name[0] +" "+ name[1];	
-}
-
-var name = $("#name").text();
-
-$('#main').append(internationalizeButton);
-
+/*** Add Map ***/
 $("#mapDiv").append(googleMap);
 
+/*** Footer Contacts ***/
+bio.displayContact("#footerContacts");
+
+/*** Toggle Content Sections Open/Close ***/
 $(function(){
 	$(".work-entry").toggle();
 	$(".project-entry").toggle();
