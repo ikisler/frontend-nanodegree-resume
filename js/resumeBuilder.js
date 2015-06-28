@@ -21,30 +21,36 @@ var work = {
 		"title": "Google Ads Quality Rater",
 		"location": "Marysville, WA",
 		"dates": "October 2014 to Present",
-		"description": ["Worked with Google to track visual quality and content accuracy of advertisements.",
+		"description": [
+			"Worked with Google to track visual quality and content accuracy of advertisements.",
  			"Examined advertising related data, and provided feedback and analysis.",
 			"Analyzed data using in-depth familiarity with web culture, and broad knowledge of topics.",
-			"Worked in a team setting to clarify issues and solve rating problems."]
+			"Worked in a team setting to clarify issues and solve rating problems."
+		]
 	},
 	{
 		"employer": "YMCA of San Benito County",
 		"title": "After School Program Leader",
 		"location": "Hollister, CA",
 		"dates": "September 2013 to June 2014",
-		"description": ["Tutored elementary school students in a variety of subjects.",
+		"description": [
+			"Tutored elementary school students in a variety of subjects.",
 			"Taught enrichment curriculum, including crafts, outdoor games, literature activities, and service learning.",
 			"Frequently engaged in curriculum development, or adjustment of curriculum to better suit age ranges of students.",
 			"Kept parents, many whom did not speak English, updated on homework status and behavior.",
-			"Assisted in student observations and placement decisions, and maintaining organization."]
+			"Assisted in student observations and placement decisions, and maintaining organization."
+		]
 	},
 	{
 		"employer": "YMCA of Silicon Valley",
 		"title": "After School Program Leader",
 		"location": "Gilroy, CA",
 		"dates": "October 2008 to June 2009",
-		"description": ["Tutored elementary and middle school students in a variety of subjects.",
+		"description": [
+			"Tutored elementary and middle school students in a variety of subjects.",
 			"Taught enrichment curriculum, including crafts, outdoor activities, and science projects.",
-			"Assisted in making student observations and decisions, and maintaining organization."]
+			"Assisted in making student observations and decisions, and maintaining organization."
+		]
 	}]
 };
 
@@ -325,8 +331,7 @@ $(function() {
         // Adjusts the div height based on whether the map is displayed
         if($("#map").css("display") ==="none") {
     		$("#mapDiv").css("height","100px");
-    	}
-    	else {
+    	} else {
     		$("#mapDiv").css("height","300px");
     	}
     });

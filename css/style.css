@@ -1,16 +1,21 @@
+/*** General page set up and colors ***/
 * {
-	padding:0;
-	margin:0;
-	font-family: 'Roboto', sans-serif;
+	padding: 0;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+}
+
+.flex-box {
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 10px;
 }
 
 .clearfix {
 	overflow: auto;
-}
-
-.education-entry, .work-entry, .project-entry {
-	padding-left: 5%;
-	padding-right: 5%;
 }
 
 #main {
@@ -46,10 +51,121 @@ h4 {
 	line-height: 17px;
 }
 
-h2, h3, h4, h5 {
-	padding:10px;
-	padding-left: 5%;
-	padding-right: 5%;
+h2,
+h3,
+h4,
+h5 {
+	padding: 10px 5%;
+}
+
+p {
+	font-size: 14px;
+	color: #333;
+	line-height: 21px;
+}
+
+a {
+	color: #1199c3;
+	text-decoration: none;
+	margin-top: 10px;
+	display: block;
+}
+
+li {
+	display: inline-block;
+	padding-bottom: 5px;
+}
+
+img {
+	padding: 10px;
+}
+
+span {
+	padding: 5px;
+}
+
+/*** Text Color ***/
+.green-text {
+	color: #bbe39e;
+}
+
+.white-text {
+	font-weight: bold;
+	color: #fff;
+}
+
+/*** Background Colors ***/
+.green {
+	background-color: #bbe39e;
+}
+
+.gray {
+	background-color: #f3f3f3; /*maybe try BBE39E */
+	padding-bottom: 10px;
+	clear: both;
+}
+
+.dark-green {
+	background-color: #629c39;
+}
+
+/*** Header Section ***/
+#header {
+	background-image: url("../images/peaches_large_2x_3.jpg");
+	background-repeat: no-repeat;
+	background-position: center top;
+	//background-color: #629c39;
+}
+
+.center-content {
+	padding: 2.5% 5%;
+}
+
+.nameSub {
+	color: #fff;
+}
+
+.biopic {
+	float: left;
+	padding: 10px;
+	width: 150px;
+	display: none;
+}
+
+.welcome-message {
+	font-style: italic;
+	font-size: 18px;
+	color: #fff;
+	line-height: 28px;
+}
+
+#skillsH3 {
+	color: #bbe39e;
+	display: none;
+}
+
+#skills {
+	list-style-type: none;
+}
+
+/** Resume Sections ***/
+.education-entry,
+.work-entry,
+.project-entry {
+	padding: 0 5%;
+}
+
+.work-title {
+	color: #40185b;
+	font-size: 18px;
+	padding-left: 15px;
+}
+
+.project-title, .school-title, .class-title {
+	color: #40185b;
+	font-size: 18px;
+	text-decoration: underline;
+	padding-left: 15px;
 }
 
 .date-text {
@@ -69,119 +185,20 @@ h2, h3, h4, h5 {
 
 }
 
-p {
-	font-size: 14px;
-	color: #333;
-	line-height: 21px;
-}
-
-a {
-	color: #1199c3;
-	text-decoration: none;
-	margin-top: 10px;
+/*** Map ***/
+#map {
 	display: block;
+	height: 100%;
+	margin: 0 5%;
 }
 
-li {
-	display:inline-block;
+#mapDiv {
+	height: 100px;
+	width: 100%;
+	padding-bottom: 5%;
 }
 
-.welcome-message {
-	font-style: italic;
-	font-size: 18px;
-	color: #fff;
-	line-height: 28px;
-}
-
-#skillsH3 {
-	color: #bbe39e;
-	display: none;
-}
-
-.green {
-	background-color: #bbe39e;
-}
-
-.green-text {
-	color: #bbe39e;
-}
-
-.white-text {
-	font-weight: bold;
-	color: #fff;
-}
-
-.gray {
-	background-color: #f3f3f3; /*maybe try BBE39E */
-	padding-bottom: 10px;
-	clear:both;
-}
-
-.dark-gray {
-	background-color: #629c39;
-}
-
-/* TODO: Replace with image later */
-#header {
-	background-image: url("../images/peaches_large_2x 3.jpg");
-	background-repeat: no-repeat;
-	background-position: center top;
-	//background-color: #629c39;
-}
-
-.nameSub {
-	color:#fff;
-}
-
-.flex-box {
-	display: -webkit-flex;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	padding: 10px;
-}
-
-.center-content {
-	padding-top: 2.5%;
-	padding-left: 5%;
-	padding-right: 5%;
-	padding-bottom: 2.5%
-}
-
-#skills {
-	list-style-type: none;
-}
-
-.work-title {
-	color: #40185b;
-	font-size: 18px;
-	padding-left: 15px;
-}
-
-.project-title, .school-title, .class-title {
-	color: #40185b;
-	font-size: 18px;
-	text-decoration: underline;
-	padding-left: 15px;
-}
-
-li {
-	padding-bottom:5px;
-}
-
-.biopic {
-	float: left;
-	padding: 10px;
-	width: 150px;
-	display: none;
-}
-
-img {
-	padding: 10px;
-}
-
-/* Bar chart stuff */
+/*** Bar chart stuff ***/
 .chart div {
 	font: 10px sans-serif;
 	background-color: #4a4a4a;
@@ -193,21 +210,19 @@ img {
 	display: inline-block;
 }
 
-span {
-	padding: 5px;
-}
-
+/*** Footer ***/
 #letsConnect {
 	text-align: center;
 }
 
+/*** Responsive Design ***/
 @media only screen and (max-width: 1024px) {
 	#letsConnect {
 		margin-top: 5%;
 	}
 }
 
-@media only screen and (max-width:900px) {
+@media only screen and (max-width: 900px) {
 	.biopic {
 		width: 175px;
 	}
@@ -223,19 +238,6 @@ span {
 	.welcome-message {
 		display: none;
 	}
-}
-
-#map {
-	display: block;
-	height: 100%;
-	margin-left: 5%;
-	margin-right: 5%;
-}
-
-#mapDiv {
-	height: 100px;
-	width: 100%;
-	padding-bottom: 5%;
 }
 
 @media only screen and (min-width: 750px) {
